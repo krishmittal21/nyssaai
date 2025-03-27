@@ -10,6 +10,8 @@ import SwiftUI
 struct ViewManager: View {
   @EnvironmentObject var appState: AppState
   @State private var previousView: AppState.CurrentView = .nonAuthenticated
+  @State private var activeTab: Tab = .home
+  @State private var isTabbarHidden: Bool = false
   
   var body: some View {
     Group {
@@ -18,7 +20,7 @@ struct ViewManager: View {
         LoginView()
         
       case .authenticated:
-        MainView()
+        TabBarContainerView(activeTab: $activeTab, isTabbarHidden: $isTabbarHidden)
           .transition(.move(edge: .trailing).combined(with: .opacity))
       }
     }

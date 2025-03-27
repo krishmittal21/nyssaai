@@ -1,5 +1,5 @@
 //
-//  MainView.swift
+//  HomeView.swift
 //  nyssaai
 //
 //  Created by Krish Mittal on 26/03/25.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MainView: View {
+struct HomeView: View {
   @EnvironmentObject var appState: AppState
   @State private var showMenu: Bool = false
   
@@ -56,5 +56,5 @@ struct MainView: View {
 }
 
 #Preview {
-  MainView()
+  HomeView()
 }
